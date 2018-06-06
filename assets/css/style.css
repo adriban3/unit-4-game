@@ -5,25 +5,48 @@ html {
     overflow: hidden;
 }
 
+header {
+    display: flex;
+    justify-content: flex-end;
+    height: 10%;
+}
+
 #head {
-    position: absolute;
-    right: 10%;
+    height: 10%;
+    margin-right: 10%;
+}
+
+#thumbs {
+    margin-left: 5px;
 }
 
 .thumbs {
-    height: 10%;
-    width: 10%;
+    height: 100px;
+    width: auto;
     padding: 2%;
     border: 2px solid green;
 
 }
 
 h1 {
-    font-weight: bold;
-    size: 3rem;
+    font-size: 3rem;
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 5px;
+}
+
+#attack {
+    position: relative;
+    top: 200px;
 }
 
 h2 {
-    font-weight: bold;
-    size: 1.5rem;
+    font-size: 1.5rem;
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+button {
+    margin-top: 5px;
+    margin-left: 5px;
 }
