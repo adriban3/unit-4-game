@@ -1,0 +1,26 @@
+body {
+    background-image: "../images/466693-Star_Wars-X-wing-748x421.jpg";
+}
+
+#head {
+    position: absolute;
+    right: 10%;
+}
+
+.thumbs {
+    height: 10%;
+    width: 10%;
+    padding: 2%;
+    border: 2px solid green;
+
+}
+
+h1 {
+    font-weight: bold;
+    size: 3rem;
+}
+
+h2 {
+    font-weight: bold;
+    size: 1.5rem;
+}
