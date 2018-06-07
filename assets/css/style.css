@@ -56,3 +56,9 @@ button {
     margin-top: 5px;
     margin-left: 5px;
 }
+
+#enemies {
+    display: flex;
+    text-align: center;
+    font-size: .75rem;
+}
