@@ -7,17 +7,19 @@ $(document).ready(function() {
 
         yourChar = $(this).attr('id');
 
-        for (i=0; i<charArr.length; i++) {
+        $(".tb").each(function(){
 
-            if (!(yourChar === charArr[i])) {
+            if(!(yourChar === $(this).attr("id"))) {
 
-                $("#" + charArr[i]).detach().appendTo("#enemies");
-                $("#" + charArr[i]).css("background-color", "red");
-                $("#" + charArr[i]).css("border-color", "black");
-                $("#" + charArr[i]).removeClass("tb").addClass("tb2");
+                enemyId = $(this).attr("id")
+
+                $("#" + enemyId).removeClass("tb").addClass("tb2");
+                $("#" + enemyId).detach().appendTo("#enemies");
+                $("#" + enemyId).css("background-color", "red");
+                $("#" + enemyId).css("border-color", "black");
 
             }
-        }
+        })
 
         $("#attack").css("top", "0px");
 
