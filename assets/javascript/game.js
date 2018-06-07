@@ -9,14 +9,16 @@ $(document).ready(function() {
 
         $(".tb").each(function(){
 
-            if(!(yourChar === $(this).attr("id"))) {
+            var enemyId = $(this).attr("id");
 
-                enemyId = $(this).attr("id")
+            if(!(yourChar === enemyId)) {
 
-                $("#" + enemyId).removeClass("tb").addClass("tb2");
-                $("#" + enemyId).detach().appendTo("#enemies");
-                $("#" + enemyId).css("background-color", "red");
-                $("#" + enemyId).css("border-color", "black");
+                var eId = "#" + enemyId;
+
+                $(eId).removeClass("tb").addClass("tb2");
+                $(eId).detach().appendTo("#enemies");
+                $(eId).css("background-color", "red");
+                $(eId).css("border-color", "black");
 
             }
         })
@@ -27,11 +29,12 @@ $(document).ready(function() {
 
         $(".tb2").on("click", function() {
 
-            otherChar = $(this).attr('id');
-            $("#" + otherChar).detach().appendTo("#defender");
-            $("#" + otherChar).css("background-color", "black");
-            $("#" + otherChar).css("border-color", "green");
-            $("#" + otherChar).css("color", "white");
+            otherChar = "#" + $(this).attr('id');
+
+            $(otherChar).detach().appendTo("#defender");
+            $(otherChar).css("background-color", "black");
+            $(otherChar).css("border-color", "green");
+            $(otherChar).css("color", "white");
 
         })
     });
