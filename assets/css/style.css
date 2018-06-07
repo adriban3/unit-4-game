@@ -32,7 +32,34 @@ header {
     border: 2px solid green;
 }
 
+.tb1 {
+    margin-left: 5px;
+    padding: .5% 2% .5% 2%;
+    height: auto;
+    width: auto;
+    background-color: white;
+    border: 2px solid green;
+}
+
 .tb2 {
+    margin-left: 5px;
+    padding: .5% 2% .5% 2%;
+    height: auto;
+    width: auto;
+    background-color: white;
+    border: 2px solid green;
+}
+
+.tb3 {
+    margin-left: 5px;
+    padding: .5% 2% .5% 2%;
+    height: auto;
+    width: auto;
+    background-color: red;
+    border: 2px solid black;
+}
+
+.tb4 {
     margin-left: 5px;
     padding: .5% 2% .5% 2%;
     height: auto;
