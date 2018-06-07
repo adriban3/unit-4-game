@@ -31,6 +31,16 @@ header {
     background-color: white;
     border: 2px solid green;
 }
+
+.tb2 {
+    margin-left: 5px;
+    padding: .5% 2% .5% 2%;
+    height: auto;
+    width: auto;
+    background-color: white;
+    border: 2px solid green;
+}
+
 .thumbs {
     height: 100px;
     width: auto;

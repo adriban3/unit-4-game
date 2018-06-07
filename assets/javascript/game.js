@@ -14,6 +14,7 @@ $(document).ready(function() {
                 $("#" + charArr[i]).detach().appendTo("#enemies");
                 $("#" + charArr[i]).css("background-color", "red");
                 $("#" + charArr[i]).css("border-color", "black");
+                $("#" + charArr[i]).removeClass("tb").addClass("tb2");
 
             }
         }
@@ -22,7 +23,7 @@ $(document).ready(function() {
 
         var otherChar;
 
-        $(".tb").on("click", function() {
+        $(".tb2").on("click", function() {
 
             otherChar = $(this).attr('id');
             $("#" + otherChar).detach().appendTo("#defender");
