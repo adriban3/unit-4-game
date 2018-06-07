@@ -2,35 +2,44 @@ $(document).ready(function() {
 
     var yourChar;
     var charArr = ["one", "two", "three", "four"];
+    var counter = 0;
+    var otherChar;
 
-    $(".tb").on("click", function() {
+    if (counter === 0) {
 
-        yourChar = $(this).attr('id');
+        $(".tb").on("click", function() {
 
-        for (i=0; i<charArr.length; i++) {
+            yourChar = $(this).attr('id');
 
-            if (!(yourChar === charArr[i])) {
+            for (i=0; i<charArr.length; i++) {
 
-                $("#" + charArr[i]).detach().appendTo("#enemies");
-                $("#" + charArr[i]).css("background-color", "red");
-                $("#" + charArr[i]).css("border-color", "black");
-                $("#" + charArr[i]).removeClass("tb").addClass("tb2");
+                if (!(yourChar === charArr[i])) {
 
+                    $("#" + charArr[i]).detach().appendTo("#enemies");
+                    $("#" + charArr[i]).css("background-color", "red");
+                    $("#" + charArr[i]).css("border-color", "black");
+                    $("#" + charArr[i]).removeClass("tb").addClass("tb2");
+
+                }
             }
-        }
 
-        $("#attack").css("top", "0px");
+            $("#attack").css("top", "0px");
+            counter++;
+        });
+    }
 
-        var otherChar;
+    if (counter === 1) {
 
         $(".tb2").on("click", function() {
 
-            otherChar = $(this).attr('id');
-            $("#" + otherChar).detach().appendTo("#defender");
-            $("#" + otherChar).css("background-color", "black");
-            $("#" + otherChar).css("border-color", "green");
-            $("#" + otherChar).css("color", "white");
+                otherChar = $(this).attr('id');
+                $("#" + otherChar).detach().appendTo("#defender");
+                $("#" + otherChar).css("background-color", "black");
+                $("#" + otherChar).css("border-color", "green");
+                $("#" + otherChar).css("color", "white");
+
+                counter++;
 
         })
-    });
+    }
 });
