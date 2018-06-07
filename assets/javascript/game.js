@@ -7,17 +7,29 @@ $(document).ready(function() {
 
         yourChar = $(this).attr('id');
 
-        $("#" + yourChar).css("background-color", "red");
-
         for (i=0; i<charArr.length; i++) {
 
             if (!(yourChar === charArr[i])) {
 
                 $("#" + charArr[i]).detach().appendTo("#enemies");
+                $("#" + charArr[i]).css("background-color", "red");
+                $("#" + charArr[i]).css("border-color", "black");
 
             }
         }
 
         $("#attack").css("top", "0px");
+
+        var otherChar;
+
+        $(".tb").on("click", function() {
+
+            otherChar = $(this).attr('id');
+            $("#" + otherChar).detach().appendTo("#defender");
+            $("#" + otherChar).css("background-color", "black");
+            $("#" + otherChar).css("border-color", "green");
+            $("#" + otherChar).css("color", "white");
+
+        })
     });
 });

@@ -61,4 +61,12 @@ button {
     display: flex;
     text-align: center;
     font-size: .75rem;
+    margin: 5px 0 5px 0;
+}
+
+#defender {
+    display: flex;
+    text-align: center;
+    font-size: .75rem;
+    margin: 5px 0 5px 0;
 }
