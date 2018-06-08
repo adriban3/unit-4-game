@@ -4,9 +4,8 @@ $(document).ready(function() {
     var counter = 0;
 
     $(".tb").on("click", function() {
-
+        
         yourChar = $(this).attr("id");
-
         $(".tb").each(function() {
 
             var enemyId = $(this).attr("id");
@@ -18,12 +17,14 @@ $(document).ready(function() {
                 $(eId).detach().appendTo("#enemies");
                 $(eId).css("background-color", "red");
                 $(eId).css("border-color", "black");
+                $(eId).off();
 
             }
 
             else if (yourChar === enemyId) {
 
                 $(eId).removeClass("tb").addClass("tb1");
+                $(eId).off();
             }
         });
 
