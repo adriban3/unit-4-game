@@ -2,10 +2,19 @@ $(document).ready(function() {
 
     var yourChar;
     var counter = 0;
+    var OHPBase = 0;
+    var YAPBase = 0;
+    var OHP = 0;
+    var YAP = 0;
+    var CAP = 0;
+    var YHP = 0;
+    var otherChar;
 
     $(".tb").on("click", function() {
         
         yourChar = $(this).attr("id");
+        YAPBase = parseInt($("#" + yourChar).attr("data-AP"));            
+        YHP = parseInt($("#" + yourChar).attr("data-HP"));
 
         $(".tb").each(function() {
 
@@ -33,11 +42,12 @@ $(document).ready(function() {
 
     });
 
-    var otherChar;
-
     $(document).on("click", ".tb2", function() {
 
         otherChar = "#" + $(this).attr("id");
+
+        OHPBase = parseInt($(otherChar).attr("data-HP"));
+        CAP = parseInt($(otherChar).attr("data-CAP"));
 
         $(otherChar).removeClass("tb2").addClass("tb3");
         $(otherChar).detach().appendTo("#defender");
@@ -52,29 +62,22 @@ $(document).ready(function() {
         });
     });
 
-    var OHPBase = 0;
-    var YAPBase = 0;
-    var OHP = 0;
-    var YAP = 0;
-    var CAP = 0;
-    var YHP = 0;
-
     $(document).on("click", "#attackButton", function() {
 
         if (counter < 1) {
 
-            OHPBase = parseInt($(otherChar).attr("data-HP"));
-            YAPBase = parseInt($("#" + yourChar).attr("data-AP"));
-            CAP = parseInt($(otherChar).attr("data-CAP"));
-            YHPBase = parseInt($("#" + yourChar).attr("data-HP"));
+            // OHPBase = parseInt($(otherChar).attr("data-HP"));
+            // CAP = parseInt($(otherChar).attr("data-CAP"));
+            // YAPBase = parseInt($("#" + yourChar).attr("data-AP"));            
+            // YHPBase = parseInt($("#" + yourChar).attr("data-HP"));
 
             OHP = OHPBase - YAPBase;
-            YHP = YHPBase - CAP;
+            YHP = YHP - CAP;
 
             $(otherChar).attr("data-HP", OHP);
             $("#" + yourChar).attr("data-HP", YHP);
 
-            YAP = YAPBase + YAPBase;
+            YAP = YAP + YAPBase;
 
             $("#" + yourChar).attr("data-ap", YAP);
 
@@ -101,6 +104,9 @@ $(document).ready(function() {
             $(document).on("click", ".tb4", function() {
 
                 otherChar = "#" + $(this).attr("id");
+
+                OHPBase = parseInt($(otherChar).attr("data-HP"));
+                CAP = parseInt($(otherChar).attr("data-CAP"));
         
                 $(otherChar).removeClass("tb4").addClass("tb3");
                 $(otherChar).detach().appendTo("#defender");
