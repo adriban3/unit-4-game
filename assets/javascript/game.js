@@ -1,12 +1,13 @@
 $(document).ready(function() {
 
     var yourChar;
+    var counter = 0;
 
     $(".tb").on("click", function() {
 
         yourChar = $(this).attr("id");
 
-        $(".tb").each(function(){
+        $(".tb").each(function() {
 
             var enemyId = $(this).attr("id");
             var eId = "#" + enemyId;
@@ -35,7 +36,6 @@ $(document).ready(function() {
     $(document).on("click", ".tb2", function() {
 
         otherChar = "#" + $(this).attr("id");
-        console.log(otherChar);
 
         $(otherChar).removeClass("tb2").addClass("tb3");
         $(otherChar).detach().appendTo("#defender");
@@ -49,4 +49,29 @@ $(document).ready(function() {
     
         });
     });
+
+    $(document).on("click", "#attackButton", function() {
+
+        if (counter < 1) {
+
+            var OHP = parseInt($(otherChar).attr("data-HP"));
+            var YAP = parseInt($("#" + yourChar).attr("data-AP"));
+            OHP -= YAP;
+            $(otherChar).attr("data-HP", OHP);
+            YAP += YAP;
+            counter++;
+            console.log(OHP);
+            console.log(YAP);
+        }
+
+        else {
+
+            OHP -= YAP;
+            $(otherChar).attr("data-HP", OHP);
+            YAP += YAP;
+            counter++;
+            console.log(OHP);
+            console.log(YAP);
+        }
+    })
 });
