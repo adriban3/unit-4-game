@@ -56,6 +56,7 @@ $(document).ready(function() {
     var OHP = 0;
     var YAP = 0;
     var CAP = 0;
+    var YHP = 0;
 
     $(document).on("click", "#attackButton", function() {
 
@@ -63,18 +64,33 @@ $(document).ready(function() {
 
             OHPBase = parseInt($(otherChar).attr("data-HP"));
             YAPBase = parseInt($("#" + yourChar).attr("data-AP"));
+            CAP = parseInt($(otherChar).attr("data-CAP"));
+            YHPBase = parseInt($("#" + yourChar).attr("data-HP"));
+
             OHP = OHPBase - YAPBase;
+            YHP = YHPBase - CAP;
+
             $(otherChar).attr("data-HP", OHP);
+            $("#" + yourChar).attr("data-HP", YHP);
+
             YAP = YAPBase + YAPBase;
+
+            $("#" + yourChar).attr("data-ap", YAP);
+
             counter++;
         }
 
         else {
 
             OHP -= YAP;
+            YHP -= CAP;
+
             $(otherChar).attr("data-HP", OHP);
+            $("#" + yourChar).attr("data-HP", YHP);
+
             YAP += YAPBase;
-            counter++;
+
+            $("#" + yourChar).attr("data-ap", YAP);
         }
     })
 });
