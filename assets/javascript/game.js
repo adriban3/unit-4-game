@@ -50,28 +50,30 @@ $(document).ready(function() {
         });
     });
 
+    var OHPBase = 0;
+    var YAPBase = 0;
+    var OHP = 0;
+    var YAP = 0;
+    var CAP = 0;
+
     $(document).on("click", "#attackButton", function() {
 
         if (counter < 1) {
 
-            var OHP = parseInt($(otherChar).attr("data-HP"));
-            var YAP = parseInt($("#" + yourChar).attr("data-AP"));
-            OHP -= YAP;
+            OHPBase = parseInt($(otherChar).attr("data-HP"));
+            YAPBase = parseInt($("#" + yourChar).attr("data-AP"));
+            OHP = OHPBase - YAPBase;
             $(otherChar).attr("data-HP", OHP);
-            YAP += YAP;
+            YAP = YAPBase + YAPBase;
             counter++;
-            console.log(OHP);
-            console.log(YAP);
         }
 
         else {
 
             OHP -= YAP;
             $(otherChar).attr("data-HP", OHP);
-            YAP += YAP;
+            YAP += YAPBase;
             counter++;
-            console.log(OHP);
-            console.log(YAP);
         }
     })
 });
