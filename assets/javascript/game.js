@@ -6,6 +6,7 @@ $(document).ready(function() {
     $(".tb").on("click", function() {
         
         yourChar = $(this).attr("id");
+
         $(".tb").each(function() {
 
             var enemyId = $(this).attr("id");
@@ -91,6 +92,30 @@ $(document).ready(function() {
             YAP += YAPBase;
 
             $("#" + yourChar).attr("data-ap", YAP);
+        }
+
+        if (OHP <= 0) {
+            $(otherChar).remove();
+            alert("Choose next enemy");
+
+            $(document).on("click", ".tb4", function() {
+
+                otherChar = "#" + $(this).attr("id");
+        
+                $(otherChar).removeClass("tb4").addClass("tb3");
+                $(otherChar).detach().appendTo("#defender");
+                $(otherChar).css("background-color", "black");
+                $(otherChar).css("border-color", "green");
+                $(otherChar).css("color", "white");
+
+                counter = 0;
+        
+            });
+        }
+
+        if (YHP <= 0) {
+            $("#" + yourchar).remove();
+            alert("You lose nerd");
         }
     })
 });
