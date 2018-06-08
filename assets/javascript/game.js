@@ -66,11 +66,6 @@ $(document).ready(function() {
 
         if (counter < 1) {
 
-            // OHPBase = parseInt($(otherChar).attr("data-HP"));
-            // CAP = parseInt($(otherChar).attr("data-CAP"));
-            // YAPBase = parseInt($("#" + yourChar).attr("data-AP"));            
-            // YHPBase = parseInt($("#" + yourChar).attr("data-HP"));
-
             OHP = OHPBase - YAPBase;
             YHP = YHP - CAP;
 
