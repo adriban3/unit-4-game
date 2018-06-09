@@ -93,25 +93,34 @@ $(document).ready(function() {
         }
 
         if (OHP <= 0) {
+
             $(otherChar).remove();
-            alert("Choose next enemy");
 
-            $(document).on("click", ".tb4", function() {
+            if ($(".tb4").length > 0) {
+            
+                alert("Choose next enemy");
 
-                otherChar = "#" + $(this).attr("id");
+                $(document).on("click", ".tb4", function() {
 
-                OHPBase = parseInt($(otherChar).attr("data-HP"));
-                CAP = parseInt($(otherChar).attr("data-CAP"));
+                    otherChar = "#" + $(this).attr("id");
+
+                    OHPBase = parseInt($(otherChar).attr("data-HP"));
+                    CAP = parseInt($(otherChar).attr("data-CAP"));
+            
+                    $(otherChar).removeClass("tb4").addClass("tb3");
+                    $(otherChar).detach().appendTo("#defender");
+                    $(otherChar).css("background-color", "black");
+                    $(otherChar).css("border-color", "green");
+                    $(otherChar).css("color", "white");
+
+                    counter = 0;
         
-                $(otherChar).removeClass("tb4").addClass("tb3");
-                $(otherChar).detach().appendTo("#defender");
-                $(otherChar).css("background-color", "black");
-                $(otherChar).css("border-color", "green");
-                $(otherChar).css("color", "white");
+                });
+            }
 
-                counter = 0;
-        
-            });
+            else if ($(".tb4".length === 0)) {
+                alert("You win sport!");
+            }
         }
 
         if (YHP <= 0) {
