@@ -13,7 +13,8 @@ $(document).ready(function() {
     $(".tb").on("click", function() {
         
         yourChar = $(this).attr("id");
-        YAPBase = parseInt($("#" + yourChar).attr("data-AP"));            
+        YAPBase = parseInt($("#" + yourChar).attr("data-AP")); 
+        YAP = YAPBase;           
         YHP = parseInt($("#" + yourChar).attr("data-HP"));
 
         $(".tb").each(function() {
