@@ -119,13 +119,13 @@ $(document).ready(function() {
             }
 
             else if ($(".tb4".length === 0)) {
-                alert("You win sport!");
+                alert("You win sport!  Click refresh to play again.");
             }
         }
 
         if (YHP <= 0) {
-            $("#" + yourchar).remove();
-            alert("You lose nerd");
+            $("#" + yourChar).remove();
+            alert("You lose nerd, click refresh to try again.");
         }
     })
 });
