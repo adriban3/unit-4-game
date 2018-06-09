@@ -113,6 +113,7 @@ $(document).ready(function() {
                     $(otherChar).css("background-color", "black");
                     $(otherChar).css("border-color", "green");
                     $(otherChar).css("color", "white");
+                    $(document).off("click", ".tb4");
 
                     counter = 0;
         
