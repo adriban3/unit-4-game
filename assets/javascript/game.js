@@ -68,7 +68,10 @@ $(document).ready(function() {
         if (counter < 1) {
 
             OHP = OHPBase - YAP;
+            $(otherChar).children(".HP").text(OHP);
+
             YHP = YHP - CAP;
+            $("#" + yourChar).children(".HP").text(YHP);
 
             $(otherChar).attr("data-HP", OHP);
             $("#" + yourChar).attr("data-HP", YHP);
@@ -83,7 +86,10 @@ $(document).ready(function() {
         else {
 
             OHP -= YAP;
+            $(otherChar).children(".HP").text(OHP);
+
             YHP -= CAP;
+            $("#" + yourChar).children(".HP").text(YHP);
 
             $(otherChar).attr("data-HP", OHP);
             $("#" + yourChar).attr("data-HP", YHP);
