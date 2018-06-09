@@ -66,7 +66,7 @@ $(document).ready(function() {
 
         if (counter < 1) {
 
-            OHP = OHPBase - YAPBase;
+            OHP = OHPBase - YAP;
             YHP = YHP - CAP;
 
             $(otherChar).attr("data-HP", OHP);
